@@ -1,0 +1,47 @@
+999 999 999
+                                9 * 100 + 90 + 9 * 1000000 + 9 * 100 + 90 + 9 * 1000 + 9 * 100 + 90 + 9
+
+999 999 999 999
+9 * 100 + 90 + 9 * 1000000000 + 9 * 100 + 90 + 9 * 1000000 + 9 * 100 + 90 + 9 * 1000 + 9 * 100 + 90 + 9
+
+([unidad * 100] + [decena] + [unidad]) * cuantificador
+
+1. (a * 100 + b + c)
+2. (a * 100 + b)
+3. (a * 100 + c)
+4. (b + c)
+5. (a * 100)
+6. (b)
+7. (c)
+
+
+Adders
+======
+
+1.  zero
+2.  unit
+3.  tenBelowTwenty
+4.  tenAboveTwenty
+
+5.  tenAboveTwenty + unit
+6.  unit + hundred-multiplier
+
+7.  unit + hundred-multiplier + unit
+8.  unit + hundred-multiplier + tenBelowTwenty
+9.  unit + hundred-multiplier + tenAboveTwenty
+
+10. unit + hundred-multiplier + tenAboveTwenty + unit
+
+
+Multipliers
+===========
+
+1. NULO
+2. 1000
+3. 1000000
+
+4. 1000 + NULO
+5. 1000000 + 1000
+6. 1000000 + NULO
+
+7. 1000000 + 1000 + NULO
