@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ee768ad537125d29a9e9058c5a820ca0eb57acfb618db4828ffb3778385b41d1
+-- hash: bd267122c327db597d330995f9df132b465d9a7d2cf739a18c161c356821b3a0
 
 name:           numeric-dictionary
 version:        0.1.0.0
@@ -27,7 +27,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Results
   other-modules:
       Paths_numeric_dictionary
   hs-source-dirs:
@@ -52,11 +52,13 @@ test-suite numeric-dictionary-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      ResultsSpec
       Paths_numeric_dictionary
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , hspec
     , numeric-dictionary
   default-language: Haskell2010

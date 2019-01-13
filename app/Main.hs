@@ -1,6 +1,6 @@
 module Main where
 
-import Lib
+import System.IO (putStrLn)
 
 main :: IO ()
-main = someFunc
+main = putStrLn "main function is not implemented."
