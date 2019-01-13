@@ -14,6 +14,6 @@ spec = do
         it "Does not transform an empty list of results" $
             prettyResults [] `shouldBe` Nothing
         it "Transforms list of results to an enumeration" $
-            let shouldTransformTo (input, expectedOutput) =
+            mapM_ shouldTransformTo $ transformations where
+                shouldTransformTo (input, expectedOutput) =
                     prettyResults input `shouldBe` (Just expectedOutput)
-            in mapM_ shouldTransformTo $ transformations
