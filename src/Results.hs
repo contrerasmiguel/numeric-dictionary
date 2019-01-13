@@ -1,6 +1,7 @@
 module Results (prettyResults) where
 
-lineElements lines = zip ['1'..] lines
+lineElements :: [a] -> [(Char, a)]
+lineElements = (zip ['1'..])
 
 mergedLineElements :: (Char, String) -> String
 mergedLineElements (num, line) = num : ". " ++ line
