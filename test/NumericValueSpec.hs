@@ -53,8 +53,7 @@ transformations = [
     , ("ninety-nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine", "9999999999999")
     , ("four billion", "4000000000000")
     , ("ninety-nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine billion nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine", "9999999999999999999999999")
-    , ("negative ninety-nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine billion nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine", "-9999999999999999999999999")
-    ]
+    , ("negative ninety-nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine billion nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine", "-9999999999999999999999999")]
 
 shouldParseExpression :: (String, String) -> Expectation
 shouldParseExpression = fShouldTransformTo readExpr

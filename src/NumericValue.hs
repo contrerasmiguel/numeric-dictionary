@@ -1,6 +1,15 @@
 module NumericValue (readExpr) where
 
-import Text.ParserCombinators.Parsec
+import Text.ParserCombinators.Parsec (
+      Parser
+    , char
+    , choice
+    , parse
+    , skipMany1
+    , space
+    , string
+    , try
+    , (<|>))
 
 type NumberValue = (Integer, String)
 
@@ -16,8 +25,7 @@ multipleOf10 = choice $ map parsePair $ zip [20, 30..] [
     , "sixty"
     , "seventy"
     , "eighty"
-    , "ninety"
-    ]
+    , "ninety"]
 
 tenTo19 :: Parser Integer
 tenTo19 = choice $ map parsePair $ zip [19, 18..] [
@@ -30,8 +38,7 @@ tenTo19 = choice $ map parsePair $ zip [19, 18..] [
     , "thirteen"
     , "twelve"
     , "eleven"
-    , "ten"
-    ]
+    , "ten"]
 
 oneTo9 :: Parser Integer
 oneTo9 = choice $ map parsePair $ zip [9, 8..] [
@@ -43,8 +50,7 @@ oneTo9 = choice $ map parsePair $ zip [9, 8..] [
     , "four"
     , "three"
     , "two"
-    , "one"
-    ]
+    , "one"]
 
 opBySep :: Parser a -> Parser b -> (b -> b -> b) -> Parser b -> Parser b
 opBySep separator big op small = try (do
@@ -64,8 +70,7 @@ multipliers = map parsePair [
       (1000000000000, "billion")
     , (1000000, "million")
     , (1000, "thousand")
-    , (100, "hundred")
-    ]
+    , (100, "hundred")]
 
 oneTo99 :: Parser Integer
 oneTo99 = twentyTo99 <|> tenTo19 <|> oneTo9

@@ -3,4 +3,5 @@ module Main where
 import System.IO (putStrLn)
 
 main :: IO ()
-main = putStrLn "main function is not implemented."
+main = do
+    putStrLn "You must specify an input file and an output file."

@@ -17,8 +17,7 @@ transformations = [
     , ("\r\tFIRST line\n", ["first line"])
     , ("FIRST line\n\n\n", ["first line"])
     , (" FIRST line\n\tsecond\tLines\n\t\t\rThird\t\tlines\t\n", ["first line"
-        ,"second\tlines", "third\t\tlines"])
-    ]
+        ,"second\tlines", "third\t\tlines"])]
 
 shouldTransformTo :: (String, [String]) -> Expectation
 shouldTransformTo = fShouldTransformTo prettyInput
