@@ -82,23 +82,23 @@ oneToN multiplier previousOneToN = opBySpaces multiplesOfM (+) previousOneToN
 oneToBillions :: Parser Integer
 oneToBillions = foldr oneToN oneTo99 multipliers
 
-negative :: Parser Integer
-negative = parsePair (-1, "negative")
-
-signedOneToBillions :: Parser Integer
-signedOneToBillions = try (do
-    sign <- negative
-    skipMany1 space
-    number <- oneToBillions
-    pure $ sign * number) <|> oneToBillions
-
 zero :: Parser Integer
 zero = parsePair (0, "zero")
 
-parseExpr :: Parser Integer
-parseExpr = zero <|> signedOneToBillions
+zeroToBillions :: Parser Integer
+zeroToBillions = zero <|> oneToBillions
+
+negative :: Parser Integer
+negative = parsePair (-1, "negative")
+
+signedZeroToBillions :: Parser Integer
+signedZeroToBillions = try (do
+    sign <- negative
+    skipMany1 space
+    number <- zeroToBillions
+    pure $ sign * number) <|> zeroToBillions
 
 readExpr :: String -> String
-readExpr input = case parse parseExpr "" input of
+readExpr input = case parse signedZeroToBillions "" input of
     Left _ -> "Could not parse this line."
     Right v -> show v
