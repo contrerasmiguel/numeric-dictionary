@@ -47,6 +47,12 @@ transformations = [
     , ("ninety", "90")
     , ("ninety-nine", "99")
     , ("ninety-nine hundred", "9900")
+    , ("nine thousand nine hundred ninety-nine", "9999")
+    , ("ninety-nine hundred ninety-nine thousand nine hundred ninety-nine", "9999999")
+    , ("five million", "5000000")
+    , ("ninety-nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine", "9999999999999")
+    , ("four billion", "4000000000000")
+    , ("ninety-nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine billion nine hundred ninety-nine thousand nine hundred ninety-nine million nine hundred ninety-nine thousand nine hundred ninety-nine", "9999999999999999999999999")
     ]
 
 shouldParseExpression :: (String, String) -> Expectation
