@@ -100,5 +100,5 @@ parseExpr = zero <|> signedOneToBillions
 
 readExpr :: String -> String
 readExpr input = case parse parseExpr "" input of
-    Left e -> "No match: " ++ show e
+    Left _ -> "Could not parse this line."
     Right v -> show v

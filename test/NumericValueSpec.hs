@@ -6,7 +6,8 @@ import TestUtil (fShouldTransformTo)
 
 transformations :: [(String, String)]
 transformations = [
-      ("zero", "0")
+      ("bla bla bla", "Could not parse this line.")
+    , ("zero", "0")
     , ("one", "1")
     , ("one hundred", "100")
     , ("one hundred ninety-eight", "198")
@@ -60,7 +61,7 @@ shouldParseExpression = fShouldTransformTo readExpr
 
 spec :: Spec
 spec = do
-    describe "" $ do
+    describe "Transformation tests" $ do
         it "Transforms an expression to its corresponding numeric value" $
             mapM_ shouldParseExpression transformations
         
